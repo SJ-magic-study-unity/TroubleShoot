@@ -10,32 +10,26 @@ open/close
 
 対応
 ************************************************************/
-■Project fileが壊れる?ことに起因する画面汚れ
+■Asset storeにて、現行versionで使用可能と謳われているAssetを落としたが、Sceneが開けなかった.
 open/close
-	2018.07.04 - 2018.07.05
+2018.07.23 - 2018.07.24
 
 環境
 	*	OS X El Capitan(10.11.6)
-	*	Xcode : 7.2
-	*	unity : 5.3.0f4
+	*	Xcode	: 7.2
+	*	unity	: 5.3.0f4
 
 現象
-	cameraを追加したり消したりしているうちに、
-	画面に汚れ?が発生。
-	
+
 原因
-	
-	
+	Unity Asset storeでは、download時に開いているUnity versionに対応するAssetを自動的に選択してdownloadする。
+	今回、5.6でダウンロードしてしまっていた。
+
 対応
-	Project file系が壊れてしまうのかもしれない.
-	新規Projectを作成し、Assetを全てCopy.
-	Sceneを開いてやれば、新たに綺麗なProject fileが生成され、cameraに映るゴミもなくなった.
-	
-	Dont forget
-		*	Layer情報が失われるので、再設定.
-		*	syphonを使っている場合は、openGL2にするのを忘れないこと。
-	
-	
+	一旦、
+		~/Library/Unity/Asset Store-5.x
+	にあるダウンロードファイルを削除し、5.3で再ダウンロードする。
+
 
 ■oF -syphon-> unity でのモアレ
 open/close
@@ -66,3 +60,32 @@ open/close
 	*	この平面専用のSpot Lightを配置
 		平面に専用のLayerを設定し、Culling maskで設定を行うこと
 		また、適宜 target objectへのtrace機能などをscriptで反映させる。
+
+
+■Project fileが壊れる?ことに起因する画面汚れ
+open/close
+	2018.07.04 - 2018.07.05
+
+環境
+	*	OS X El Capitan(10.11.6)
+	*	Xcode : 7.2
+	*	unity : 5.3.0f4
+
+現象
+	cameraを追加したり消したりしているうちに、
+	画面に汚れ?が発生。
+	
+原因
+	
+	
+対応
+	Project file系が壊れてしまうのかもしれない.
+	新規Projectを作成し、Assetを全てCopy.
+	Sceneを開いてやれば、新たに綺麗なProject fileが生成され、cameraに映るゴミもなくなった.
+	
+	Dont forget
+		*	Layer情報が失われるので、再設定.
+		*	syphonを使っている場合は、openGL2にするのを忘れないこと。
+	
+	
+
